@@ -31,15 +31,33 @@ function recuperaDentista(id) {
   
     switch (atributo) {
       case "name":
-        valor = datosDentista.name[0].text ?? "Unknown";
+        valor = datosDentista.name[0] ?? "unknown";
+        break;
+      case "surname":
+        valor = datosDentista.surname[0] ?? "unknown";
         break;
       case "gender":
         valor = datosDentista.gender ?? "unknown";
         break;
       case "active":
         valor = datosDentista.active ?? false;
-    }
+        break;
+      case "birthdate":
+        valor = datosDentista.birthdate ?? "unknown"  ;
+        break;
+      case "address":
+        //const address0 = datosDentista.address[0]?.text ?? "Unknown";
+        //const address1 = datosDentista.address[1]?.text ?? "Unknown";
+        //valor = [address0, address1];
+        valor = datosDentista.address ?? "unknown"  ;
+        break;
+      case "phone":
+          valor = datosDentista.phone ?? 0  ;
+          break;
+      case "mail":
+          valor = datosDentista.mail ?? "unknown"  ;
   
+    }
     return valor;
   }
   

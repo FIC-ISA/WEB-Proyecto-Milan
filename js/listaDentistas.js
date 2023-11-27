@@ -2,7 +2,7 @@
 //Importaciones y exportaciones
 export { insertaEnDOMListaDentistas, suprimeDelDOMListaDentistas };
 
-import { recuperaTodosLosDentistas, recuperaNombreDentista } from "./datos/modeloDentistas.js";
+import { recuperaTodosLosDentistas, recuperaNombreDentista, recuperaAtributoDentista } from "./datos/modeloDentistas.js";
 import { actualizaVistaActual } from "./menuOpciones.js";
 import { insertaEnDOMDatosDentista } from "./datosDentista.js";
 
@@ -69,7 +69,8 @@ function creaDentistaNode(p) {
   node.dataset.item = "dentista";
   node.classList = "itemDentista";
 
-  node.innerText = recuperaNombreDentista(p);
+  node.innerText = recuperaNombreDentista(p) + " " + recuperaAtributoDentista(p, "surname") ;
+
 
   return node;
 }

@@ -24,8 +24,14 @@ function insertaEnDOMDatosDentista(id, tipo) {
   insertaContenedorDatosDentista();
 
   insertaNombreDentistaEnContenedor();
+  insertaApellidoDentistaEnContenedor();
   insertaDentistaActivoEnContenedor();
   insertaGeneroDentistaEnContenedor();
+  insertaFNacimientoDentistaEnContenedor();
+  insertaDireccionDentistaEnContenedor();
+  insertaTelefonoDentistaEnContenedor();
+  insertaCorreoDentistaEnContenedor();
+
   insertaBotonesEnContenedor();
 
   if (tipoInteraccion == "consulta") {
@@ -53,6 +59,11 @@ function suprimeDelDOMDatosDentista() {
 
 // Funciones auxiliares para la gestión del DOM (Dentistas)
 
+
+//--------------------------------------------------------------------------------------------------/
+//-------------------------- insertaAtributosEnContenedor ------------------------------------------/
+//--------------------------------------------------------------------------------------------------/
+
 function insertaContenedorDatosDentista() {
   const datosDentistaNode = document.createElement("div");
   datosDentistaNode.id = "datosDentista";
@@ -79,8 +90,26 @@ function insertaNombreDentistaEnContenedor() {
   nodeDiv.appendChild(inputNode);
 }
 
+function insertaApellidoDentistaEnContenedor() {
+
+  const nodeDiv = document.createElement("div");
+  const datosDentistaNode = document.getElementById("datosDentista");
+  datosDentistaNode.appendChild(nodeDiv);
+
+  // Crea e incorpora el nodo etiqueta al nodo DIV
+  const labelNode = creaLabelNode("Apellido: ", "surname");
+  nodeDiv.appendChild(labelNode);
+
+  // Crea e incorpora el nodo entrada al nodo DIV
+  const inputNode = document.createElement("input");
+  inputNode.id = "surname";
+  inputNode.type = "text";
+  nodeDiv.appendChild(inputNode);
+}
+
+
 function insertaDentistaActivoEnContenedor() {
-  // El estado activo del registro del paciente se incorpora dentro de un elemento DIV
+  // El estado activo del registro del dentista se incorpora dentro de un elemento DIV
   // que incluyen los elementos label e input
 
   const nodeDiv = document.createElement("div");
@@ -122,6 +151,91 @@ function insertaGeneroDentistaEnContenedor() {
   selectNode.innerHTML = optionsHTML;
 }
 
+function insertaFNacimientoDentistaEnContenedor() {
+  // La fecha de nacimiento del dentista se incorpora dentro de un elemento DIV
+  // que incluyen los elementos label e input
+
+  const nodeDiv = document.createElement("div");
+  const datosDentistaNode = document.getElementById("datosDentista");
+  datosDentistaNode.appendChild(nodeDiv);
+
+  // Crea e incorpora el nodo etiqueta al nodo DIV
+  const labelNode = creaLabelNode("Fecha de Nacimiento: ", "birthdate");
+  nodeDiv.appendChild(labelNode);
+
+  // Crea e incorpora el nodo entrada al nodo DIV
+  const inputNode = document.createElement("input");
+  inputNode.id = "birthdate";
+  inputNode.type = "date";
+  nodeDiv.appendChild(inputNode);
+}
+
+function insertaDireccionDentistaEnContenedor() {
+  // La fecha de nacimiento del dentista se incorpora dentro de un elemento DIV
+  // que incluyen los elementos label e input
+
+  const nodeDiv = document.createElement("div");
+  const datosDentistaNode = document.getElementById("datosDentista");
+  datosDentistaNode.appendChild(nodeDiv);
+
+  // Crea e incorpora el nodo etiqueta al nodo DIV
+  const labelNode = creaLabelNode("Direccion: ", "address");
+  nodeDiv.appendChild(labelNode);
+
+  // Crea e incorpora el nodo entrada al nodo DIV
+  const inputNode = document.createElement("input");
+  inputNode.id = "address"; 
+  inputNode.type = "string"; //TODO: convertir a array??
+  nodeDiv.appendChild(inputNode);
+}
+
+function insertaTelefonoDentistaEnContenedor() {
+  // LEl número de telefono del dentista se incorpora dentro de un elemento DIV
+  // que incluyen los elementos label e input
+
+  const nodeDiv = document.createElement("div");
+  const datosDentistaNode = document.getElementById("datosDentista");
+  datosDentistaNode.appendChild(nodeDiv);
+
+  // Crea e incorpora el nodo etiqueta al nodo DIV
+  const labelNode = creaLabelNode("Telefono: ", "phone");
+  nodeDiv.appendChild(labelNode);
+
+  // Crea e incorpora el nodo entrada al nodo DIV
+  const inputNode = document.createElement("input");
+  inputNode.id = "phone";
+  inputNode.type = "number";  //TODO: string
+  nodeDiv.appendChild(inputNode);
+}
+
+
+function insertaCorreoDentistaEnContenedor() {
+  // El correo electrónico del dentista se incorpora dentro de un elemento DIV
+  // que incluyen los elementos label e input
+
+  const nodeDiv = document.createElement("div");
+  const datosDentistaNode = document.getElementById("datosDentista");
+  datosDentistaNode.appendChild(nodeDiv);
+
+  // Crea e incorpora el nodo etiqueta al nodo DIV
+  const labelNode = creaLabelNode("Correo Electronico: ", "mail");
+  nodeDiv.appendChild(labelNode);
+
+  // Crea e incorpora el nodo entrada al nodo DIV
+  const inputNode = document.createElement("input");
+  inputNode.id = "mail";
+  inputNode.type = "string";  
+  nodeDiv.appendChild(inputNode);
+}
+
+
+
+
+
+//-------------------------------------------------------------------------------------------------------/
+//-------------------------------------------------------------------------------------------------------/
+
+//Botones
 function insertaBotonesEnContenedor() {
   // Se crea un contenedor donde se incluyen todos los botones
   const divNode = document.createElement("div");
@@ -158,6 +272,9 @@ function actualizaValoresContenedor() {
   const nombreNode = document.getElementById("name");
   nombreNode.value = recuperaNombreDentista(idDentista);
 
+  const apellidoNode = document.getElementById("surname");
+  apellidoNode.value = recuperaAtributoDentista(idDentista, "surname")
+
   const activeNode = document.getElementById("active");
   activeNode.checked = recuperaAtributoDentista(idDentista, "active");
 
@@ -166,6 +283,18 @@ function actualizaValoresContenedor() {
   const genderNode = document.getElementById(selector);
 
   genderNode.selected = "true";
+
+  const fNacimientoNode = document.getElementById("birthdate");
+  fNacimientoNode.value = recuperaAtributoDentista(idDentista, "birthdate");
+
+  const direccionNode = document.getElementById("address");
+  direccionNode.value = recuperaAtributoDentista(idDentista, "address");
+
+  const telefonoNode = document.getElementById("phone");
+  telefonoNode.value = recuperaAtributoDentista(idDentista, "phone");
+
+  const correoNode = document.getElementById("mail");
+  correoNode.value = recuperaAtributoDentista(idDentista, "mail");
 }
 
 // Funciones de respuesta a los eventos
@@ -200,11 +329,26 @@ function recolectaDatosDentista() {
   const nameNode = document.getElementById("name");
   datosDentista.name = [{ text: nameNode.value }];
 
+  const surnameNode = document.getElementById("surname");
+  datosDentista.surname = [{ text: surnameNode.value }];
+
   const genderNode = document.getElementById("gender");
   datosDentista.gender = genderNode.value;
 
   const activeNode = document.getElementById("active");
   datosDentista.active = activeNode.checked;
+
+  const fNacimientoNode = document.getElementById("birthdate");
+  datosDentista.birthdate = fNacimientoNode.value;
+
+  const direccionNode = document.getElementById("address");
+  datosDentista.address = direccionNode.value;
+
+  const telefonoNode = document.getElementById("phone");
+  datosDentista.phone = telefonoNode.value;
+
+  const correoNode = document.getElementById("mail");
+  datosDentista.mail = correoNode.value;
 
   return datosDentista;
 }

@@ -6,44 +6,48 @@ export { cargaDatosDentistas };
 const dentistas = ["dentista01", "dentista02", "dentista03", "dentista04"];
 
 const dentista01 = {
-  name: [{ text: "Alberto" }],
+  name: [{ text: "Alberto"}],
+  surname: [{ text: "Garcia"}],
   active: false,
   gender: "male",
-  birthdate: "1969-04-23",
-  address: "",
-  phone: "",
-  mail: ""
+  birthdate: "1969-04-23", //yyyy-mm-dd
+  address: "Calle Asuncion, 13, 41011, Sevilla, España", //ARRAY [desplegable calle/Avenida][nombre][numero][cpostal][ciudad][pais]
+  phone: 654632176,
+  mail: "alberto@us.es"
 };
 
 const dentista02 = {
-  name: [{ text: "Alfonso" }],
+  name: [{ text: "Alfonso"}],
+  surname: [{ text: "Ibañez"}],
   active: true,
   gender: "male",
-  birthdate: "1974-05-18",
-  address: "",
-  phone: "",
-  mail: ""
+  birthdate: "1974-05-18", //yyyy-mm-dd
+  address: "Calle Virgen de la Cinta, 3, 41022, Sevilla, España",
+  phone: 654632176,
+  mail: "alfonso@us.es"
 };
 
 const dentista03 = {
-  name: [{ text: "Rafael" }],
+  name: [{ text: "Rafael"}],
+  surname: [{ text: "Prieto"}],
   active: true,
   gender: "male",
-  birthdate: "1974-05-18",
-  address: "",
-  phone: "",
-  mail: ""
+  birthdate: "1974-05-18", //yyyy-mm-dd
+  address: "Calle Virgen de Lujan, 52, 41010, Sevilla, España",
+  phone: 658632176,
+  mail: "rafael@us.es"
 
 };
 
 const dentista04 = {
   name: [{ text: "Valle" }],
+  surname: [{ text: "Alonso de Caso"}],
   active: true,
   gender: "female",
-  birthdate: "1974-05-18",
-  address: "",
-  phone: "",
-  mail: ""
+  birthdate: "1974-05-18", //yyyy-mm-dd
+  address: "Avenida de la República Argentina, 3, 41011, Sevilla, España",
+  phone: 654632176,
+  mail: "valle@us.es"
 
 };
 
