@@ -26,7 +26,6 @@ function insertaEnDOMDatosDentista(id, tipo) {
   insertaNombreDentistaEnContenedor();
   insertaDentistaActivoEnContenedor();
   insertaGeneroDentistaEnContenedor();
-  insertaBirthdateDentistaEnContenedor();
   insertaBotonesEnContenedor();
 
   if (tipoInteraccion == "consulta") {
@@ -81,7 +80,7 @@ function insertaNombreDentistaEnContenedor() {
 }
 
 function insertaDentistaActivoEnContenedor() {
-  // El estado activo del registro del dentista se incorpora dentro de un elemento DIV
+  // El estado activo del registro del paciente se incorpora dentro de un elemento DIV
   // que incluyen los elementos label e input
 
   const nodeDiv = document.createElement("div");
@@ -122,26 +121,6 @@ function insertaGeneroDentistaEnContenedor() {
   `;
   selectNode.innerHTML = optionsHTML;
 }
-
-function insertaBirthdateDentistaEnContenedor() {
-  // El cumpleaños del dentista se incorpora dentro de un elemento DIV
-  // que incluyen los elementos label e input
-
-  const nodeDiv = document.createElement("div");
-  const datosPacienteNode = document.getElementById("datosDentista");
-  datosPacienteNode.appendChild(nodeDiv);
-
-  // Crea e incorpora el nodo etiqueta al nodo DIV
-  const labelNode = creaLabelNode("Cumpleaños: ", "birthdate");
-  nodeDiv.appendChild(labelNode);
-
-  // Crea e incorpora el nodo entrada al nodo DIV
-  const inputNode = document.createElement("input");
-  inputNode.id = "birthdate";
-  inputNode.type = "date";
-  nodeDiv.appendChild(inputNode);
-}
-
 
 function insertaBotonesEnContenedor() {
   // Se crea un contenedor donde se incluyen todos los botones
