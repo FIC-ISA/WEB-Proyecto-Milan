@@ -1,0 +1,20 @@
+/************************************************************************
+// Proyecto FIC
+// Version v0.9.flexbox
+************************************************************************/
+
+/************************************************************************/
+
+.listaDentistas {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+
+  border: solid 2px green;
+  padding: 0.2rem;
+}
+
+.itemDentista:hover {
+  background-color: hsl(120, 29%, 81%);
+}
