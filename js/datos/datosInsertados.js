@@ -11,8 +11,8 @@ const dentista01 = {
   active: false,
   gender: "male",
   birthdate: "1969-04-23", //yyyy-mm-dd
-  address: "Calle Asuncion, 13, 41011, Sevilla, España", //ARRAY [desplegable calle/Avenida][nombre][numero][cpostal][ciudad][pais]
-  phone: 654632176,
+  address: "Calle Asuncion, 13, 41011, Sevilla, España", 
+  phone: "+34654632176",
   mail: "alberto@us.es"
 };
 
@@ -23,7 +23,7 @@ const dentista02 = {
   gender: "male",
   birthdate: "1974-05-18", //yyyy-mm-dd
   address: "Calle Virgen de la Cinta, 3, 41022, Sevilla, España",
-  phone: 654632176,
+  phone: "+34654632176",
   mail: "alfonso@us.es"
 };
 
@@ -34,7 +34,7 @@ const dentista03 = {
   gender: "male",
   birthdate: "1974-05-18", //yyyy-mm-dd
   address: "Calle Virgen de Lujan, 52, 41010, Sevilla, España",
-  phone: 658632176,
+  phone: "+34758632176",
   mail: "rafael@us.es"
 
 };
@@ -46,7 +46,7 @@ const dentista04 = {
   gender: "female",
   birthdate: "1974-05-18", //yyyy-mm-dd
   address: "Avenida de la República Argentina, 3, 41011, Sevilla, España",
-  phone: 654632176,
+  phone: "+34654632176",
   mail: "valle@us.es"
 
 };

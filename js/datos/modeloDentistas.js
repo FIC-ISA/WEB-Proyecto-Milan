@@ -30,11 +30,11 @@ function recuperaDentista(id) {
     const datosDentista = recuperaDentista(id);
   
     switch (atributo) {
-      case "name":
+      /*Scase "name":
         valor = datosDentista.name[0] ?? "unknown";
-        break;
+        break;*/
       case "surname":
-        valor = datosDentista.surname[0] ?? "unknown";
+        valor = datosDentista.surname[0].text ?? "unknown";
         break;
       case "gender":
         valor = datosDentista.gender ?? "unknown";
@@ -46,9 +46,6 @@ function recuperaDentista(id) {
         valor = datosDentista.birthdate ?? "unknown"  ;
         break;
       case "address":
-        //const address0 = datosDentista.address[0]?.text ?? "Unknown";
-        //const address1 = datosDentista.address[1]?.text ?? "Unknown";
-        //valor = [address0, address1];
         valor = datosDentista.address ?? "unknown"  ;
         break;
       case "phone":

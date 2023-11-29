@@ -151,6 +151,7 @@ function insertaGeneroDentistaEnContenedor() {
   selectNode.innerHTML = optionsHTML;
 }
 
+
 function insertaFNacimientoDentistaEnContenedor() {
   // La fecha de nacimiento del dentista se incorpora dentro de un elemento DIV
   // que incluyen los elementos label e input
@@ -189,8 +190,7 @@ function insertaDireccionDentistaEnContenedor() {
   nodeDiv.appendChild(inputNode);
 }
 
-function insertaTelefonoDentistaEnContenedor() {
-  // LEl número de telefono del dentista se incorpora dentro de un elemento DIV
+ /*/ LEl número de telefono del dentista se incorpora dentro de un elemento DIV
   // que incluyen los elementos label e input
 
   const nodeDiv = document.createElement("div");
@@ -204,8 +204,35 @@ function insertaTelefonoDentistaEnContenedor() {
   // Crea e incorpora el nodo entrada al nodo DIV
   const inputNode = document.createElement("input");
   inputNode.id = "phone";
-  inputNode.type = "number";  //TODO: string
+  inputNode.type = "tel";  //TODO: string
+  nodeDiv.appendChild(inputNode);*/
+
+function insertaTelefonoDentistaEnContenedor() {
+ 
+
+  const nodeDiv = document.createElement("div");
+  const datosDentistaNode = document.getElementById("datosDentista");
+  datosDentistaNode.appendChild(nodeDiv);
+
+  // Crea e incorpora el nodo etiqueta al nodo DIV
+  const labelNode = creaLabelNode("Número de Teléfono: ", "phone");
+  nodeDiv.appendChild(labelNode);
+
+  // Crea e incorpora el nodo select al nodo DIV
+  const inputNode = document.createElement("input");
+  inputNode.id = "phone";
+  inputNode.type = "tel";
+  inputNode.pattern = "\\+34[6-7]{1}[0-9]{8}";
+  inputNode.required = true;
   nodeDiv.appendChild(inputNode);
+  
+  inputNode.addEventListener('blur', function() {
+    if (!inputNode.checkValidity()) {
+      alert("El formato del número de teléfono no es válido.\nDebe registrarse con un número de teléfono español, siguiendo el siguiente formato +34XXXXXXXX ");
+    }
+  });
+  
+  
 }
 
 
