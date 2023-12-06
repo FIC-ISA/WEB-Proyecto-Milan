@@ -1,4 +1,4 @@
-// Identificación del proyecto
+// IdentificaciÃ³n del proyecto
 const nombreDeGrupoNode = document.getElementById("nombreDeGrupo");
 nombreDeGrupoNode.innerText = "Milán";
 

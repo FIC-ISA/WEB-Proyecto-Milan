@@ -18,6 +18,7 @@
   color:  white;
   padding: 1rem;
   text-align: left;
+  font-size: 1.75rem;
 }
 
 .menu {
@@ -35,7 +36,7 @@
   color: white;
   padding: 0.2rem 0.6rem;
   cursor: pointer;
-
+  border-radius: 8px;
 }
 
 .cuerpo {

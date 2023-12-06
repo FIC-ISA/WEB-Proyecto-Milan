@@ -1,0 +1,19 @@
+.contenidoInicial {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.imagenGrupo {
+  
+  border: 3px solid var(--color-primario);
+}
+
+.listaComponentes {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+}

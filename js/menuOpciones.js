@@ -4,6 +4,7 @@
 
 import { insertaEnDOMContenidoInicial, suprimeDelDOMContenidoInicial } from "./contenidoPaginaInicial.js";
 import { insertaEnDOMListaDentistas, suprimeDelDOMListaDentistas } from "./listaDentistas.js";
+import { insertaEnDOMContenidoPaginaComponentes, suprimeDelDOMContenidoPaginaComponentes } from "./contenidoPaginaComponentes.js";
 import { suprimeDelDOMDatosDentista } from "./datosDentista.js";
 import { insertaEnDOMListaTratamientos, suprimeDelDOMListaTratamientos } from "./listaTratamientos.js";
 
@@ -36,7 +37,8 @@ function insertaOpcionesMenu() {
   const opcionesHTML =
     '<li data-vista="contenidoInicial" class="itemOpcionesMenu">Inicio</li>' +
     '<li data-vista="listaDentistas" class="itemOpcionesMenu">Dentistas</li>' +
-    '<li data-vista="listaTratamientos" class="itemOpcionesMenu">Tratamientos</li>';
+    '<li data-vista="listaTratamientos" class="itemOpcionesMenu">Tratamientos</li>' +
+    '<li data-vista="contenidoComponentes" class="itemOpcionesMenu">Componentes</li>';
 
   const opcionesMenuNode = document.getElementById("opcionesMenu");
   opcionesMenuNode.innerHTML = opcionesHTML;
@@ -61,6 +63,10 @@ function respuestaPulsarEnMenu(e) {
     case "listaTratamientos":
       insertaEnDOMListaTratamientos();
       break;
+    case "contenidoComponentes":
+      insertaEnDOMContenidoPaginaComponentes();
+      break;
+    
   }
 }
 
@@ -79,6 +85,9 @@ function eliminaDelDOMVistaActual() {
       break;
     case "datosDentista":
       suprimeDelDOMDatosDentista();
+      break;
+    case "contenidoComponentes":
+      suprimeDelDOMContenidoPaginaComponentes();
       break;
   }
 }

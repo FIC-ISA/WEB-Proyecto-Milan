@@ -17,4 +17,5 @@
 
 .itemDentista:hover {
   background-color: hsl(120, 29%, 81%);
+  cursor: pointer;
 }
