@@ -1,29 +1,25 @@
 export { insertaEnDOMContenidoPaginaComponentes, suprimeDelDOMContenidoPaginaComponentes };
 
 const contenidoHTML = `
-<div id="contenidoInicial" class="contenidoInicial">
-  <h1>Bienvenido a la página de los componentes del grupo</h1>
-  <img class="imagenGrupo" src="./img/Universidad-de-Sevilla.webp" alt="Imagen de Grupo FIC" width="22%" />
-  <p>Componentes del grupo</p>
-  <ul class="listaComponentes" style="display: flex; list-style: none; padding: 0;">
-    <li class="itemComponente" style="flex: 1; margin-right: 25px; ">
-      <img src="./img/150x150.componente01.avatarMaker.png" alt="María del Valle Alonso" /><br> María del Valle Alonso <br> maraloort 
-    </li>
-    <li class="itemComponente" style="flex: 1; margin-right: 25px; ">
-      <img src="./img/150x150.componente01.avatarMaker.png" alt="Rafael Prieto" /><br> Rafael Prieto <br> rafprigar
-    </li>
-    <li class="itemComponente" style="flex: 1; margin-right: 25px; ">
-      <img src="./img/150x150.componente02.avatarMaker.png" alt="Alfonso Ibáñez" /><br> Alfonso Ibáñez 
-    </li>
-    <li class="itemComponente" style="flex: 1; margin-right: 25px; ">
-      <img src="./img/150x150.componente01.avatarMaker.png" alt="Alberto García" /><br> Alberto García <br> albgarmar16
-    </li>
-  </ul>
-</div>
+<div class="contenidoInicial">
+      <img class="imagenUS" src="./img/Universidad-de-Sevilla.webp" alt="Imagen US"/>
+      <h2>Componentes del grupo</h2>
+      <ul class="listaComponentes">
+        <li class="itemComponente">
+          <img src="./img/foto_valle.jpeg" alt="María del Valle Alonso de Caso Ortiz" /><br>María del Valle Alonso<br> de Caso Ortiz
+        </li>
+        <li class="itemComponente">
+          <img src="./img/foto_rafa.jpeg" alt="Rafael Prieto" /><br> Rafael Prieto García
+        </li>
+        <li class="itemComponente">
+          <img src="./img/foto_alfonso.jpeg" alt="Alfonso Ibáñez" /><br> Alfonso Ibáñez Rodríguez
+        </li>
+        <li class="itemComponente">
+          <img src="./img/foto_alberto.jpeg" alt="Alberto García" /><br> Alberto García Mármol
+        </li>
+      </ul>
+    </div>
 `;
-
-
-
 
 function insertaEnDOMContenidoPaginaComponentes() {
   const cuerpoNode = document.getElementById("cuerpo");

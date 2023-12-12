@@ -5,8 +5,8 @@ export { insertaEnDOMContenidoInicial, suprimeDelDOMContenidoInicial };
 
 const contenidoHTML = `
 <h1>Clínica Dental Milán</h1>
-<h2>¿Quiénes somos?</h2>
 <div class="parrafo1">
+  <h2>¿Quiénes somos?</h2>
   <p>La reconocida Clínica Dental Milán en Sevilla lleva más de dos décadas siendo un punto de referencia en el ámbito odontológico.
     Nuestro enfoque se orienta hacia la promoción de la salud bucodental, abarcando la prevención, diagnóstico y rehabilitación de diversas afecciones dentales.<br>
     Con el respaldo de más de 14,000 pacientes, nuestra experiencia y excelencia profesional son respaldadas por la confianza depositada en nosotros. Sin embargo, lo más apreciado por nuestros pacientes no son solamente la tecnología o los costos, sino el ambiente familiar y acogedor que ofrecemos en un entorno de lujo y comodidad. 
@@ -15,8 +15,8 @@ const contenidoHTML = `
   <img src="./img/clinica.webp" alt="Imagen 1">
 </div>
 
-<h2>¿Por qué debes ir al dentista?</h2>
 <div class="parrafo2">
+  <h2>¿Por qué debes ir al dentista?</h2>
   <p>Hay múltiples razones para mantener una visita regular al dentista, siendo la prevención una de las más importantes.
     En Clínica Dental Milán, entendemos que la prevención en la salud bucal es esencial para evitar problemas futuros y detectar afecciones a tiempo. Recomendamos acudir al dentista al menos dos veces al año.<br>
     La detección temprana de caries, incluso aquellas que no son visibles a simple vista o pueden parecer solo manchas, es fundamental. Nuestro equipo de odontólogos realiza exhaustivas exploraciones para identificar estas caries. Cuanto antes se detecten, más sencillo y económico será el tratamiento necesario.
@@ -27,8 +27,8 @@ const contenidoHTML = `
   <img src="./img/dentista.jpeg" alt="Imagen 2">
 </div>
 
-<h2>Tu dentista de confianza</h2>
 <div class="parrafo3">
+  <h2>Tu dentista de confianza</h2> 
   <p>En nuestra Clínica Dental disponemos de un destacado equipo humano, altamente cualificado y de renombre. Nuestro enfoque en el cuidado del paciente y la búsqueda constante de las soluciones más óptimas nos permite garantizar resultados excelentes en cada caso.
     Nuestros profesionales dentales acumulan más de dos décadas de experiencia, lo que nos habilita para ofrecer un servicio odontológico integral de la más alta calidad.
   </p>

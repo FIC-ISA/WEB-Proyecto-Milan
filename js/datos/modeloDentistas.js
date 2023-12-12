@@ -6,6 +6,7 @@ export {
     recuperaAtributoDentista,
     actualizaDentista,
     altaDentista,
+    borraDentista,
   };
 
 //Funciones de gestión de dentistas
@@ -68,6 +69,17 @@ function recuperaDentista(id) {
     localStorage.setItem(id, JSON.stringify(datos));
   }
   
+  function borraDentista(id) {
+    localStorage.removeItem(id);
+    const dentistasPrevio = recuperaTodosLosDentistas();
+    
+    const dentistasNuevos = dentistasPrevio.filter((p) => {
+      return p !== id;
+    });
+    localStorage.setItem("dentistas", JSON.stringify(dentistasNuevos));
+  }
+  
+
   function altaDentista(datos) {
     // Funcion auxiliar para generar un índice de la forma dentistaXX
   
@@ -108,5 +120,6 @@ function recuperaDentista(id) {
   
     // Se añade un item para el nuevo dentista
     actualizaDentista(id, datos);
-  }
 
+
+  }

@@ -1,4 +1,3 @@
-
 //Importaciones y exportaciones
 import { insertaEnDOMListaDentistas } from "./listaDentistas.js";
 import { actualizaVistaActual } from "./menuOpciones.js";
@@ -61,11 +60,7 @@ function suprimeDelDOMDatosDentista() {
 
 
 // Funciones auxiliares para la gestión del DOM (Dentistas)
-
-
-//--------------------------------------------------------------------------------------------------/
-//-------------------------- insertaAtributosEnContenedor ------------------------------------------/
-//--------------------------------------------------------------------------------------------------/
+//Inserta atributos en contenedor
 
 function insertaContenedorDatosDentista() {
   const datosDentistaNode = document.createElement("div");
@@ -141,10 +136,7 @@ function insertaDNIDentistaEnContenedor(){
       alert("El formato del DNI no es válido.\nDebe registrar un DNI español, siguiendo el siguiente formato 99999999X");
     }
   });
-
-
 }
-
 
 function insertaDentistaActivoEnContenedor() {
 
@@ -204,7 +196,6 @@ function insertaGeneroDentistaEnContenedor() {
   `;
   selectNode.innerHTML = optionsHTML;
 }
-
 
 function insertaFNacimientoDentistaEnContenedor() {
   // La fecha de nacimiento del dentista se incorpora dentro de un elemento DIV
@@ -291,9 +282,6 @@ function insertaConsultaDentistaEnContenedor() {
 
 }
 
-
-
-
 function insertaDireccionDentistaEnContenedor() {
   // La fecha de nacimiento del dentista se incorpora dentro de un elemento DIV
   // que incluyen los elementos label e input
@@ -309,11 +297,9 @@ function insertaDireccionDentistaEnContenedor() {
   // Crea e incorpora el nodo entrada al nodo DIV
   const inputNode = document.createElement("input");
   inputNode.id = "address"; 
-  inputNode.type = "text"; //TODO: convertir a array??
+  inputNode.type = "text";
   nodeDiv.appendChild(inputNode);
 }
-
- 
 
 function insertaTelefonoDentistaEnContenedor() {
  
@@ -338,10 +324,7 @@ function insertaTelefonoDentistaEnContenedor() {
       alert("El formato del número de teléfono no es válido.\nDebe registrarse con un número de teléfono español, siguiendo el siguiente formato +34XXXXXXXX ");
     }
   });
-  
-  
 }
-
 
 function insertaCorreoDentistaEnContenedor() {
   // El correo electrónico del dentista se incorpora dentro de un elemento DIV
@@ -368,13 +351,6 @@ function insertaCorreoDentistaEnContenedor() {
     }
   })
 }
-
-
-
-
-
-//-------------------------------------------------------------------------------------------------------/
-//-------------------------------------------------------------------------------------------------------/
 
 //Botones
 function insertaBotonesEnContenedor() {
@@ -450,7 +426,6 @@ function actualizaValoresContenedor() {
     node.checked="true";
   }
   //
-  
 
   const direccionNode = document.getElementById("address");
   direccionNode.value = recuperaAtributoDentista(idDentista, "address");

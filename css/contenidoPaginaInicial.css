@@ -7,7 +7,7 @@ h1 {
 
 h2 {
   font-size: 2em;
-  margin-top: 30px;
+  margin-top: 50px;
   text-align: center;
   color: #555; 
 }
@@ -65,4 +65,3 @@ h2 {
 .mapa-google {
   margin-top: 2rem;
 }
-

@@ -1,8 +1,7 @@
-
 //Importaciones y exportaciones
 export { insertaEnDOMListaDentistas, suprimeDelDOMListaDentistas };
 
-import { recuperaTodosLosDentistas, recuperaNombreDentista, recuperaAtributoDentista } from "./datos/modeloDentistas.js";
+import { recuperaTodosLosDentistas, recuperaNombreDentista, recuperaAtributoDentista, borraDentista } from "./datos/modeloDentistas.js";
 import { actualizaVistaActual } from "./menuOpciones.js";
 import { insertaEnDOMDatosDentista } from "./datosDentista.js";
 
@@ -11,7 +10,6 @@ import { insertaEnDOMDatosDentista } from "./datosDentista.js";
 function insertaEnDOMListaDentistas() {
   insertaContenedorListaDentistas();
   insertaDentistasEnContenedor();
-
   insertarBotonNuevoDentista();
 
   const listaDentistasNode = document.getElementById("listaDentistas");
@@ -69,18 +67,34 @@ function creaDentistaNode(p) {
   node.dataset.item = "dentista";
   node.classList = "itemDentista";
 
-  node.innerText = recuperaNombreDentista(p) + " " + recuperaAtributoDentista(p, "surname") ;
-
-
+  const nombreDentista = recuperaNombreDentista(p) + " " + recuperaAtributoDentista(p, "surname");
+  const nombreCompleto = `<span data-tipo="nombreDentista" class="nombreDentista"> ${nombreDentista} </span>`;
+  const botonBajaHTML = `<span data-tipo="controlBajaDentista" class="controlBajaDentista"> X </span>`;
+  const contenidoHTML = botonBajaHTML + nombreCompleto;
+  node.innerHTML = contenidoHTML;
   return node;
 }
 
 ///   Funciones gestoras de eventos
 
 function respuestaPulsarEnDentista(e) {
-  if (e.target.dataset.item == "dentista") {
-    suprimeDelDOMListaDentistas();
-    insertaEnDOMDatosDentista(e.target.id, "consulta");
+  
+
+  const elementoPulsado = e.target.dataset.tipo;
+  const idDentista = e.target.parentNode.id ?? "";
+
+  switch (elementoPulsado) {
+    case "nombreDentista":
+      suprimeDelDOMListaDentistas();
+      actualizaVistaActual("datosDentista");
+      insertaEnDOMDatosDentista(idDentista, "consulta");
+      break;
+    case "controlBajaDentista":
+      const dentistaNode = document.getElementById(idDentista);
+      const listaDentistasNode = document.getElementById("listaDentistas");
+      listaDentistasNode.removeChild(dentistaNode);
+      borraDentista(idDentista);
+      break;
   }
 }
 

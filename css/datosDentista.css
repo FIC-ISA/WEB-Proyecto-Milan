@@ -1,10 +1,3 @@
-/************************************************************************
-// Proyecto FIC
-// Version v0.9.flexbox
-************************************************************************/
-
-/************************************************************************/
-
 .datosDentista {
   display: flex;
   flex-direction: column;
@@ -19,6 +12,9 @@
 }
 
 .boton {
-  padding: 0.3rem 0.5rem;
+  margin-top: 0.25rem;
+  margin-right: 0.5rem;
   cursor: pointer;
+  background-color: hsl(120, 29%, 81%);
+  border-color: hsl(120, 29%, 81%);
 }

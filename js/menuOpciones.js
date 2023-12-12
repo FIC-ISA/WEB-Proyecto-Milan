@@ -1,15 +1,13 @@
-
 // Menu Opciones
-
 
 import { insertaEnDOMContenidoInicial, suprimeDelDOMContenidoInicial } from "./contenidoPaginaInicial.js";
 import { insertaEnDOMListaDentistas, suprimeDelDOMListaDentistas } from "./listaDentistas.js";
 import { insertaEnDOMContenidoPaginaComponentes, suprimeDelDOMContenidoPaginaComponentes } from "./contenidoPaginaComponentes.js";
 import { suprimeDelDOMDatosDentista } from "./datosDentista.js";
+import { suprimeDelDOMDatosTratamiento } from "./datosTratamiento.js";
 import { insertaEnDOMListaTratamientos, suprimeDelDOMListaTratamientos } from "./listaTratamientos.js";
 
 export { insertaEnDOMOpcionesMenu, actualizaVistaActual };
-
 
 let vistaActual = "contenidoInicial";
 
@@ -85,6 +83,9 @@ function eliminaDelDOMVistaActual() {
       break;
     case "datosDentista":
       suprimeDelDOMDatosDentista();
+      break;
+    case "datosTratamiento":
+      suprimeDelDOMDatosTratamiento();
       break;
     case "contenidoComponentes":
       suprimeDelDOMContenidoPaginaComponentes();
